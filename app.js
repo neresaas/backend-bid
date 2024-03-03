@@ -17,7 +17,7 @@ app.use(['/items', '/bids'], (req, res, next) => {
 
     let infoApiKey
     try{
-    let infoApiKey = jwt.verify(apiKey, 'secret')
+        infoApiKey = jwt.verify(apiKey, 'secret')
     } catch (error) {
         res.status(401).json({error: 'not valid apiKey'})
         return
